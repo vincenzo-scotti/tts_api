@@ -22,9 +22,9 @@ To install all the required packages within an anaconda environment, run the fol
 
 ```bash
 # Create anaconda environment (skip cudatoolkit option if you don't want to use the GPU)
-conda create -n gstt python=3.10 cudatoolkit=11.3
+conda create -n ttsapi python=3.10 cudatoolkit=11.3
 # Activate anaconda environment
-conda activate gstt
+conda activate ttsapi
 # Install packages
 conda install pytorch=1.11.0 -c pytorch
 conda install -c conda-forge numpy=1.21 tensorboard=2.9.1 pandas scikit-learn librosa matplotlib seaborn jupyterlab
