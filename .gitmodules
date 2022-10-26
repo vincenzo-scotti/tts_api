@@ -2,3 +2,7 @@
 	path = TTS
 	url = https://github.com/mozilla/TTS.git
 	branch = dev
+[submodule "GE2E-Speaker-Encoder"]
+	path = GE2E-Speaker-Encoder
+	url = https://github.com/Edresson/GE2E-Speaker-Encoder.git
+	branch = speaker-encoder
