@@ -1,0 +1,6 @@
+[submodule "TTS"]
+	path = TTS
+	url = ./TTS
+[submodule "GE2E-Speaker-Encoder"]
+	path = GE2E-Speaker-Encoder
+	url = ./GE2E-Speaker-Encoder
