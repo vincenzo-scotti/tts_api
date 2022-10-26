@@ -51,7 +51,7 @@ Directory structure:
 ```
 
 Notes: 
-- TTS was trained on 22050 Hz audio clips, Vocoder was trained on 24000 Hz audio clips, there is an issue to help use model ([link](https://github.com/mozilla/TTS/issues/520)).
+- TTSes were trained on 22050 Hz audio clips, Vocoders were trained on 24000 Hz audio clips, there is an issue to help use model ([link](https://github.com/mozilla/TTS/issues/520)).
 - Vocoder scaling stats should not be used in case of multi speaker model according to model config file comments.
 - Only the checkpoint of the speaker encoder can be retained from the corresponding archive, it is located in `pretrained/encoder/saved_models/`
 - To have the speaker encoder work out of the box it is necessary to change line 33 in file `./GE2E-Speaker-Encoder/encoder/inference.py` from  `checkpoint = torch.load(weights_fpath)` to `checkpoint = torch.load(weights_fpath, map_location=_device)`.
