@@ -13,12 +13,14 @@ This repository is organised into two main directories:
     - directory to host the vocoder models;
     - directory to host the speaker embedding model.
 - `tts_api/` package with the api.
+- `TTS/` submodule with tts and vocoders code.
+- `GE2E-Speaker-Encoder/`submodule with speaker encoder code.
 
 For further details on the available models, refer to the `README.md` in the `resources/` directory.
 
 ## Environment
 
-To install all the required packages within an anaconda environment, run the following commands:
+To install all the required packages within an anaconda environment ans do a complete setup, run the following commands:
 
 ```bash
 # Create anaconda environment (skip cudatoolkit option if you don't want to use the GPU)
@@ -45,15 +47,20 @@ conda install -c conda-forge umap-learn visdom webrtcvad
 cd ..
 ```
 
-Notice that it is necessary to clone separately the TTS and speaker encoder repository, this additional repositories must be on path.
-Moreover, the TTS repository must be rebased to a specific commit and branch.
+to add the directories to the Python path, you can add these lines to the file `~/.bashrc`
+
+```bash
+export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/src/tts_mozilla_api
+export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/TTS
+export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/GE2E-Speaker-Encoder
+```
 
 ## Example
 
 Here follows a usage example:
 ```python
 import torch
-from tts_api import load_tts, load_vocoder, load_speaker_encoder, synthesise_speech
+from tts_mozilla_api import load_tts, load_vocoder, load_speaker_encoder, synthesise_speech
 
 
 # Reference audio for voice (optional)
