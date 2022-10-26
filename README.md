@@ -24,7 +24,7 @@ To install all the required packages within an anaconda environment ans do a com
 
 ```bash
 # Create anaconda environment (skip cudatoolkit option if you don't want to use the GPU)
-conda create -n ttsapi python=3.10 cudatoolkit=11.3
+conda create -n ttsmozilla python=3.10 cudatoolkit=11.3
 # Activate anaconda environment
 conda activate ttsmozilla
 # Install packages
