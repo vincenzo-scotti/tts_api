@@ -26,28 +26,18 @@ To install all the required packages within an anaconda environment ans do a com
 # Create anaconda environment (skip cudatoolkit option if you don't want to use the GPU)
 conda create -n ttsapi python=3.10 cudatoolkit=11.3
 # Activate anaconda environment
-conda activate ttsapi
+conda activate ttsmozilla
 # Install packages
 conda install pytorch=1.11.0 -c pytorch
-conda install -c conda-forge numpy=1.21 tensorboard=2.9.1 pandas scikit-learn librosa matplotlib seaborn jupyterlab
-# Repo for Text-to-Speech with its requirements 
-git clone https://github.com/mozilla/TTS -b dev
-cd TTS
-# See https://discourse.mozilla.org/t/size-mismatches-in-released-model/75538/3
-git checkout ea976b0  
-conda install -c conda-forge unidecode attrdict tensorboardx pysoundfile pysbd pyworld pydub inflect=5.6.0
+conda install -c conda-forge numpy=1.21 tensorboard=2.9.1 pandas scikit-learn librosa matplotlib seaborn jupyterlab unidecode attrdict tensorboardx pysoundfile pysbd pyworld pydub inflect=5.6.0 umap-learn visdom webrtcvad
 pip install "phonemizer>=2.2.0"
-cd ..
-# Additional repo for the Speaker Encoder with its requirements
-git clone https://github.com/Edresson/GE2E-Speaker-Encoder.git -b speaker-encoder
-cd GE2E-Speaker-Encoder
-sed -i '.tmp' 's/checkpoint = torch.load(weights_fpath)/checkpoint = torch.load(weights_fpath, map_location=_device)/' encoder/inference.py
-conda install -c conda-forge umap-learn visdom webrtcvad
-# pip install umap-learn visdom webrtcvad "librosa>=0.5.1" "matplotlib>=2.0.2"
-cd ..
+# Download and initialise submodules
+git submodule init; git submodule update
+# Update line of code in speaker encoder to make it usable (there is an issue with the device of the checkpoint)
+sed -i '.tmp' 's/checkpoint = torch.load(weights_fpath)/checkpoint = torch.load(weights_fpath, map_location=_device)/' 'GE2E-Speaker-Encoder/encoder/inference.py'
 ```
 
-to add the directories to the Python path, you can add these lines to the file `~/.bashrc`
+To add the directories to the Python path, you can add these lines to the file `~/.bashrc`
 
 ```bash
 export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/src/tts_mozilla_api
