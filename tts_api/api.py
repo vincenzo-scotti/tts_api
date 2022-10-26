@@ -72,7 +72,7 @@ def load_tts(
 def load_vocoder(
         vocoder_model_config_path: str,
         vocoder_model_checkpoint_path: str,
-        vocoder_model_scale_stats_path: str,
+        vocoder_model_scale_stats_path: Optional[str] = None,
         device: Optional[torch.device] = None
 ) -> Tuple[Union[FullbandMelganGenerator, Wavegrad, MultibandMelganGenerator], AttrDict, AudioProcessor]:
     device = device if device is not None else torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -82,7 +82,7 @@ def load_vocoder(
 
     vocoder_ap = AudioProcessor(**vocoder_configs.audio)
 
-    vocoder_model: Union[FullbandMelganGenerator, Wavegrad] = setup_generator(vocoder_configs)
+    vocoder_model: Union[FullbandMelganGenerator, Wavegrad, MultibandMelganGenerator] = setup_generator(vocoder_configs)
     vocoder_model.load_state_dict(torch.load(vocoder_model_checkpoint_path, map_location=torch.device('cpu'))['model'])
     if isinstance(vocoder_model, FullbandMelganGenerator):
         vocoder_model.remove_weight_norm()
