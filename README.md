@@ -1,4 +1,4 @@
-# TTS API
+# Mozilla TTS API
 
 API for [Mozilla TTS library](https://github.com/mozilla/TTS).
 This repository contains an installation guide and some utility functions to simplify the access to the models in this library.
@@ -67,8 +67,7 @@ tts, tts_configs, tts_ap = load_tts(
 )
 vocoder, vocoder_configs, vocoder_ap = load_vocoder(
     'resources/models/vocoder/fb_melgan/config.json', 
-    'resources/models/vocoder/fb_melgan/best_model.pth.tar', 
-    'resources/models/vocoder/fb_melgan/scale_stats.npy'
+    'resources/models/vocoder/fb_melgan/best_model.pth.tar'
 )
 load_speaker_encoder('resources/models/speaker_encoder/ge2e/pretrained.pt')
 
