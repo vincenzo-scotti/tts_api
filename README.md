@@ -40,7 +40,7 @@ sed -i '.tmp' 's/checkpoint = torch.load(weights_fpath)/checkpoint = torch.load(
 To add the directories to the Python path, you can add these lines to the file `~/.bashrc`
 
 ```bash
-export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/src/mozilla_tts_api
+export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/src
 export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/TTS
 export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/GE2E-Speaker-Encoder
 ```
