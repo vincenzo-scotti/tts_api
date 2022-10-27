@@ -24,7 +24,7 @@ To install all the required packages within an anaconda environment ans do a com
 
 ```bash
 # Create anaconda environment (skip cudatoolkit option if you don't want to use the GPU)
-conda create -n ttsapi python=3.10 cudatoolkit=11.3
+conda create -n ttsmozilla python=3.10 cudatoolkit=11.3
 # Activate anaconda environment
 conda activate ttsmozilla
 # Install packages
@@ -57,16 +57,16 @@ from mozilla_tts_api import load_tts, load_vocoder, load_speaker_encoder, synthe
 audio_path = 'path/to/audio.wav'
 # Load model instances
 tts, tts_configs, tts_ap = load_tts(
-    'resources/models/tts/tacotron_2_multispeaker/config.json', 
-    'resources/models/tts/tacotron_2_multispeaker/checkpoint_220000.pth.tar', 
-    tts_model_scale_stats_path='resources/models/tts/tacotron_2_multispeaker/scale_stats.npy',
-    tts_model_speaker_file='resources/models/tts/tacotron_2_multispeaker/speakers.json'
+    'resources/tts/tacotron_2_multispeaker/config.json', 
+    'resources/tts/tacotron_2_multispeaker/checkpoint_220000.pth.tar', 
+    tts_model_scale_stats_path='resources/tts/tacotron_2_multispeaker/scale_stats.npy',
+    tts_model_speaker_file='resources/tts/tacotron_2_multispeaker/speakers.json'
 )
 vocoder, vocoder_configs, vocoder_ap = load_vocoder(
-    'resources/models/vocoder/fb_melgan/config.json', 
-    'resources/models/vocoder/fb_melgan/best_model.pth.tar'
+    'resources/vocoder/fb_melgan/config.json', 
+    'resources/vocoder/fb_melgan/best_model.pth.tar'
 )
-load_speaker_encoder('resources/models/speaker_encoder/ge2e/pretrained.pt')
+load_speaker_encoder('resources/speaker_encoder/ge2e/pretrained.pt')
 
 # Syntehsise speech
 synthesise_speech(

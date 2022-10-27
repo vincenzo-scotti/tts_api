@@ -6,8 +6,8 @@ All credits to the original authors and contributors that trained the models (se
 Voice synthesis:
 - Spectrogram generation:
   - [Tacotron 2](http://proceedings.mlr.press/v80/wang18h.html):
-    - [w/ spekaer embeddings](https://proceedings.neurips.cc/paper/2018/hash/6832a7b24bc06775d02b7406880b93fc-Abstract.html) ([weights checkpoint](https://drive.google.com/uc?id=1LOp9NMpxQzobRiQkEq32B11_uu6g06Ma), [configuration file](https://drive.google.com/uc?id=1RuS5YEX0_DWPQo7Od_o7_9YGBBflDM1w), [speaker embeddings](https://drive.google.com/uc?id=1AZAWxW67MRgKNTeYvWcLBN_RN-D8B-iJ), [scaling statistics](https://drive.google.com/uc?id=1BHmVmi4gTLZE5ITE9EwCTNJT2x-9Uygj));
-    - [w/ GST and spekaer embeddings](http://proceedings.mlr.press/v80/skerry-ryan18a.html) (GSTs are [Global Style Tokens](http://proceedings.mlr.press/v80/wang18h.html)):
+    - [w/ speaker embeddings](https://proceedings.neurips.cc/paper/2018/hash/6832a7b24bc06775d02b7406880b93fc-Abstract.html) ([weights checkpoint](https://drive.google.com/uc?id=1LOp9NMpxQzobRiQkEq32B11_uu6g06Ma), [configuration file](https://drive.google.com/uc?id=1RuS5YEX0_DWPQo7Od_o7_9YGBBflDM1w), [speaker embeddings](https://drive.google.com/uc?id=1AZAWxW67MRgKNTeYvWcLBN_RN-D8B-iJ), [scaling statistics](https://drive.google.com/uc?id=1BHmVmi4gTLZE5ITE9EwCTNJT2x-9Uygj));
+    - [w/ GST and speaker embeddings](http://proceedings.mlr.press/v80/skerry-ryan18a.html) (GSTs are [Global Style Tokens](http://proceedings.mlr.press/v80/wang18h.html)):
       - Separate embeddings for style and speaker ([weights checkpoint, configuration file and speaker embeddings file](https://github.com/Edresson/TTS/releases/download/v1.0.0/Checkpoints-TTS-MultiSpeaker-Jia-et-al-2018-with-GST-CorentinJ_SpeakerEncoder_and_DDC.zip));
       - Combined embeddings for style and speaker ([weights checkpoint](https://drive.google.com/uc?id=1iDCL_cRIipoig7Wvlx4dHaOrmpTQxuhT), [configuration file](https://drive.google.com/uc?id=1YKrAQKBLVXzyYS0CQcLRW_5eGfMOIQ-2), [speaker embeddings](https://drive.google.com/uc?id=1oOnPWI_ho3-UJs3LbGkec2EZ0TtEOc_6)).
 - Vocoder:
