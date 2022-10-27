@@ -12,7 +12,7 @@ This repository is organised into two main directories:
     - directories to host the TTS models;
     - directory to host the vocoder models;
     - directory to host the speaker embedding model.
-- `tts_api/` package with the api.
+- `src/mozilla_tts_api/` package with the api.
 - `TTS/` submodule with tts and vocoders code.
 - `GE2E-Speaker-Encoder/`submodule with speaker encoder code.
 
@@ -40,7 +40,7 @@ sed -i '.tmp' 's/checkpoint = torch.load(weights_fpath)/checkpoint = torch.load(
 To add the directories to the Python path, you can add these lines to the file `~/.bashrc`
 
 ```bash
-export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/src/tts_mozilla_api
+export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/src/mozilla_tts_api
 export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/TTS
 export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/GE2E-Speaker-Encoder
 ```
@@ -50,7 +50,7 @@ export PYTHONPATH=$PYTHONPATH:/path/to/tts_mozilla_api/GE2E-Speaker-Encoder
 Here follows a usage example:
 ```python
 import torch
-from tts_mozilla_api import load_tts, load_vocoder, load_speaker_encoder, synthesise_speech
+from mozilla_tts_api import load_tts, load_vocoder, load_speaker_encoder, synthesise_speech
 
 
 # Reference audio for voice (optional)
